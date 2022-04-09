@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Register = () => {
   return (
-    <div className='flex items-center justify-center bg-slate-500 h-screen'>
+    <div className='flex items-center justify-center bg-slate-60 h-auto'>
       <section id='form' className='block p-6 mt-5 bg-slate-50 rounded-lg shadow-md shadow-slate-300 w-90 '>
         <form action="" className='mt-5 '>
           <h2 className='text-3xl font-semibold text-blue-700 my-4'>Register</h2>
@@ -26,8 +27,12 @@ const Register = () => {
           <label htmlFor="password" className=' text-sm'> Confirm Password</label>
           <input type="password" id='password' className='w-full h-8 border rounded-lg border-slate-300 pl-2 outline-blue-600 bg-transparent' />
           <input type="submit" value="Submit" className='mt-2 h-12 bg-blue-600 w-full cursor-pointer border rounded-md text-white hover:bg-blue-700 hover:outline outline-2 outline-blue-400 outline-offset-2 text-xl' /> <br />
+          <div className='flex items-center justify-between'>
+            <input type="submit" value="Sign up with Google" className='mt-2 h-12 bg-blue-600 w-1/2 cursor-pointer border rounded-md text-white hover:bg-blue-700 hover:outline outline-2 outline-blue-400 outline-offset-2 text-xl' /> <br />
+            <input type="submit" value="Sign up with Github" className='mt-2 h-12 bg-blue-600 w-1/2 cursor-pointer border rounded-md text-white hover:bg-blue-700 hover:outline outline-2 outline-blue-400 outline-offset-2 text-xl' /> <br />
+          </div>
           <p className='my-2 text-xm'>Already have an account?
-            <a href="#" className='text-blue-600 pl-2'>Login</a>
+            <Link to='/Login' className='text-blue-600 pl-2'>Login</Link>
           </p>
         </form>
       </section>
