@@ -11,6 +11,11 @@ const Header = () => {
   return (
     <div>
       <nav className='flex items-center justify-center text-2xl'>
+        <NavLink to='/'
+          style={navLinkStyles}
+          className='m-3'
+        >Home</NavLink>
+
         <NavLink to='/register'
           style={navLinkStyles}
           className='m-3'
