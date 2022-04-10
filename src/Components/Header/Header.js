@@ -1,7 +1,14 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { NavLink } from 'react-router-dom';
+import auth from '../../_firebase.init';
 
 const Header = () => {
+  const [user] = useAuthState(auth);
+  const logOut = () => {
+    signOut(auth);
+  }
   const navLinkStyles = ({ isActive }) => {
     return {
       color: isActive ? 'blue' : 'black',
@@ -25,9 +32,13 @@ const Header = () => {
           className='m-3'
         >Sign up</NavLink>
 
-        <NavLink to='/login'
-          style={navLinkStyles}
-        >Sign in</NavLink>
+        {
+          user ?
+            <button onClick={logOut}>Sign Out</button>
+            :
+            <NavLink to='/login'
+              style={navLinkStyles}
+            >Sign in</NavLink>}
       </nav>
     </div>
   );
