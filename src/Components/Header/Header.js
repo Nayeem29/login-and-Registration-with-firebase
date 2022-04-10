@@ -15,6 +15,10 @@ const Header = () => {
           style={navLinkStyles}
           className='m-3'
         >Home</NavLink>
+        <NavLink to='/products'
+          style={navLinkStyles}
+          className='m-3'
+        >Products</NavLink>
 
         <NavLink to='/register'
           style={navLinkStyles}
